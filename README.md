@@ -1,0 +1,1 @@
+# AlugaAi-projetoDeSoftware
