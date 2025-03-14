@@ -11,7 +11,7 @@ Este projeto foi desenvolvido para a matéria de Projetos de Software, do curso 
 | Diagrama de casos de uso |
 
 ## Diagrama de classes 
-| <img src="Documentação/Class diagram.png" alt="use case"/> |
+| <img src="Documentação/diagramaDeClassesAlugaAi.png" alt="use case"/> |
 |:---------------------:|
 | Diagrama de classes |
 
@@ -42,5 +42,5 @@ Este projeto foi desenvolvido para a matéria de Projetos de Software, do curso 
 
 ## Links Uteis
 
-- [Diagrama de Casos de Uso no Figma]([https://www.figma.com/board/wF6VISE7wazLz5nLJRs01S/Use-Case-(Copy)?node-id=0-1&t=9BhIaHnJ9eTdwW5z-1](https://www.figma.com/board/yTKvLwomu31T4yBHM11T7S/Use-Case-Template-(Community)?node-id=0-1&p=f&t=XihTXQdGBsxlMuV3-0))
-- [Diagrama de Classes no Figma](https://www.figma.com/board/SFUK5CWMCommWkiJO6hWZj/Class-Diagram-Template-(Community)?node-id=3-923)
+- [Diagrama de Casos de Uso no Figma](https://www.figma.com/board/yTKvLwomu31T4yBHM11T7S/Use-Case-Template-(Community)?node-id=0-1&t=mSb00FbNu9v6LWck-1)
+- [Diagrama de Classes no Figma](https://www.figma.com/board/PjNP5gCiLVlBUb6eitXKDp/diagramaDeClassesAlugaAi?node-id=0-1&t=xTeEipfob6r3uUU5-1)
