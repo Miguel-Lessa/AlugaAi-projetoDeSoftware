@@ -1,4 +1,4 @@
-package com.alugaai.aluga_ai;
+package com.example.alugai.aluga_ai;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
