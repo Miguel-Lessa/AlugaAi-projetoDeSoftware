@@ -1,4 +1,4 @@
-package com.example.alugai.aluga_ai;
+package com.alugai;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
