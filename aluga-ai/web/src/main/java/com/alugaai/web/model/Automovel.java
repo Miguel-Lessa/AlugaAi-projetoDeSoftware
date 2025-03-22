@@ -1,5 +1,8 @@
-package com.alugai.model;
+package com.alugaai.web.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,12 +13,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-
+@Table(name = "automoveis")
 public class Automovel {
+    @Id
+    private int matricula;
     private String marca;
     private String modelo;
     private int ano;
-    private int matricula;
     private String placa;
     private String posse;
     private boolean alugado;

@@ -1,10 +1,10 @@
-package com.alugai;
+package com.alugaai.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AlugaAiApplicationTests {
+class WebApplicationTests {
 
 	@Test
 	void contextLoads() {
