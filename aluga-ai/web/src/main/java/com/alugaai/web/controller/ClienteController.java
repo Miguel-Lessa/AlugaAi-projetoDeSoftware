@@ -16,16 +16,28 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @RequestMapping("/cliente/novo")
+    @GetMapping("/cliente/login")
+    public String loginForm() {
+        return "cliente-login";
+    }
+
+    @PostMapping("/cliente/excluir")
+    public String excluirCliente(@RequestParam("cpf") String cpf) {
+        clienteService.excluirCliente(cpf);
+        return "redirect:/login";
+    }
+
+    @GetMapping("/cliente/novo")
     public String criaClienteForm(Model model) {
         Cliente cliente = new Cliente();
         model.addAttribute("cliente", new Cliente());
         return "cliente-create";
     }
 
-    @RequestMapping(value = "cliente", method = RequestMethod.POST)
-    public String salvarCliente(Cliente cliente) {
+    @PostMapping("/cliente/novo")
+    public String salvarClient(@ModelAttribute("cliente") Cliente cliente) {
         clienteService.salvarCliente(cliente);
         return "redirect:/login";
     }
+
 }

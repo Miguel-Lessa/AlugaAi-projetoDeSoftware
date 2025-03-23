@@ -12,7 +12,7 @@
 <body>
 <div class="container mt-5">
     <h2>Criar Conta</h2>
-    <form action="@{/cliente}" th:action="@{/cliente/novo}" th:object="${cliente}" method="post">
+    <form method="post" th:action="@{/cliente/novo}" th:object="${cliente}">
         <div class="mb-3">
             <label for="cpf" class="form-label">CPF</label>
             <input type="text" class="form-control" id="cpf" th:field="*{cpf}" placeholder="Digite seu CPF"/>

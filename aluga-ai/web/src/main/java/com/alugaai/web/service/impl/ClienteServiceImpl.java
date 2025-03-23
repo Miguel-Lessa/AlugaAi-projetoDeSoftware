@@ -38,14 +38,6 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public void excluirCliente(String idCliente) {
-        Cliente cliente = clienteRepository.findById(idCliente)
-                .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
-        clienteRepository.delete(cliente);
-    }
-
-
-    @Override
     public Cliente criarNovoPedido() {
         return new Cliente();
     }
@@ -63,17 +55,16 @@ public class ClienteServiceImpl implements ClienteService {
                 .build();
     }
 
-//    public static Cliente mapToClub(ClienteDto clienteDto) {
-//        return Cliente.builder()
-//                .cpf(clienteDto.getCpf())
-//                .nome(clienteDto.getNome())
-//                .senha(clienteDto.getSenha())
-//                .endereco(clienteDto.getEndereco())
-//                .profissao(clienteDto.getProfissao())
-//                .rendimentos(clienteDto.getRendimentos())
-//                .empregadoras(clienteDto.getEmpregadoras().stream()
-//                        .map(event -> mapToP(event)) // Corrected lambda syntax
-//                        .collect(Collectors.toList()))
-//                .build();
-//    }
+    @Override
+    public Cliente buscarPorCpf(String cpf) {
+        return clienteRepository.findById(cpf).orElse(null);
+    }
+
+
+    @Override
+    public void excluirCliente(String cpf) {
+        Cliente cliente = clienteRepository.findByCpf(cpf)
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+        clienteRepository.delete(cliente);
+    }
 }

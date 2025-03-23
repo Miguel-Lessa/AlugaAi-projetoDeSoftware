@@ -14,4 +14,5 @@ public interface ClienteService {
     Cliente criarNovoPedido();
 
 
+    Cliente buscarPorCpf(String cpf);
 }
