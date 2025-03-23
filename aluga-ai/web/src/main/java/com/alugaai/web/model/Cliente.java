@@ -15,23 +15,19 @@ import java.util.List;
 @Entity
 @Table(name = "clientes")
 public class Cliente {
-
     @Id
-    private String cpf; 
+    private String cpf;
     private String nome;
     private String senha;
     private String rg;
     private String endereco;
     private String profissao;
-
-    @ElementCollection  
+    @ElementCollection
     @CollectionTable(name = "clientes_rendimentos", joinColumns = @JoinColumn(name = "cpf_cliente"))
-    private List<Double> rendimentos;  
-
-    @ElementCollection 
+    private List<Double> rendimentos;
+    @ElementCollection
     @CollectionTable(name = "clientes_empregadoras", joinColumns = @JoinColumn(name = "cpf_cliente"))
-    private List<String> empregadoras;  
-
+    private List<String> empregadoras;
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Pedidos> pedidos; 
+    private List<Pedidos> pedidos;
 }

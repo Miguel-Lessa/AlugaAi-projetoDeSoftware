@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/css/styles.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sono:wght@200..800&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veículos Disponíveis</title>
+</head>
+<body class="bg-gray-100">
+<header class="main">
+    <h1>GET YOURSELF A NICE CAR AND HAVE A NICE DAY</h1>
+</header>
+
+<div>
+    <h2 class="veiculos-disponiveis">Veículos</h2>
+
+    <section class="veiculos">
+        <div class="veiculo-card" th:each="veiculo : ${veiculos}">
+            <img src="https://cdn.dealeraccelerate.com/cam/34/2357/112299/1920x1440/1966-ford-mustang-coupe" class="h-48 w-auto" alt="Imagem do veículo" />
+            <div class="p-6">
+                <div class="info">
+                    <h5 th:text="${veiculo.nome}">CORVETTE</h5>
+                    <p class="ano" th:text="${veiculo.ano}">1985</p>
+                </div>
+                <p class="valor" th:text="'Valor: R$ ' + ${veiculo.valor}">R$50.000</p>
+                <button type="submit" class="btn-alugar">ALUGAR</button>
+            </div>
+        </div>
+
+        <div class="veiculo-card" th:each="veiculo : ${veiculos}">
+            <img src="https://i.pinimg.com/736x/24/af/d2/24afd2e083406f0adf50578b7d4d1ed5.jpg" class="h-48 w-auto" alt="Imagem do veículo" />
+            <div class="p-6">
+                <div class="info">
+                    <h5 th:text="${veiculo.nome}">CADILLAC</h5>
+                    <p class="ano" th:text="${veiculo.ano}">1968</p>
+                </div>
+                <p class="valor" th:text="'Valor: R$ ' + ${veiculo.valor}">R$50.000</p>
+                <button type="submit" class="btn-alugar">ALUGAR</button>
+            </div>
+        </div>
+
+        <div class="veiculo-card" th:each="veiculo : ${veiculos}">
+            <img src="https://cdn.dealeraccelerate.com/cam/34/2357/112299/1920x1440/1966-ford-mustang-coupe" class="h-48 w-auto" alt="Imagem do veículo" />
+            <div class="p-6">
+                <div class="info">
+                    <h5 th:text="${veiculo.nome}">CORVETTE</h5>
+                    <p class="ano" th:text="${veiculo.ano}">1985</p>
+                </div>
+                <p class="valor" th:text="'Valor: R$ ' + ${veiculo.valor}">R$50.000</p>
+                <button type="submit" class="btn-alugar">ALUGAR</button>
+            </div>
+        </div>
+
+        <div class="veiculo-card" th:each="veiculo : ${veiculos}">
+            <img src="https://cdn.dealeraccelerate.com/cam/34/2357/112299/1920x1440/1966-ford-mustang-coupe" class="h-48 w-auto" alt="Imagem do veículo" />
+            <div class="p-6">
+                <div class="info">
+                    <h5 th:text="${veiculo.nome}">CORVETTE</h5>
+                    <p class="ano" th:text="${veiculo.ano}">1985</p>
+                </div>
+                <p class="valor" th:text="'Valor: R$ ' + ${veiculo.valor}">R$50.000</p>
+                <button type="submit" class="btn-alugar">ALUGAR</button>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>

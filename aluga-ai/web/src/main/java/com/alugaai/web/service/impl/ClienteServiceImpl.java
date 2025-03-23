@@ -42,7 +42,6 @@ public class ClienteServiceImpl implements ClienteService {
         return new Cliente();
     }
 
-
     private ClienteDto mapToClienteDto(Cliente cliente) {
         return ClienteDto.builder()
                 .cpf(cliente.getCpf())
@@ -59,7 +58,6 @@ public class ClienteServiceImpl implements ClienteService {
     public Cliente buscarPorCpf(String cpf) {
         return clienteRepository.findById(cpf).orElse(null);
     }
-
 
     @Override
     public void excluirCliente(String cpf) {

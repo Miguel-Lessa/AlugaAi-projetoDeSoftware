@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 
 @Controller
 public class LoginController {
-
     @Autowired
     private ClienteService clienteService;
 
@@ -21,14 +20,11 @@ public class LoginController {
         return "login";
     }
 
-
     @PostMapping("/login")
     public String loginCliente(@RequestParam("cpf") String cpf,
                                @RequestParam("senha") String senha,
                                Model model) {
-
         Cliente cliente = clienteService.buscarPorCpf(cpf);
-
         if (cliente != null && cliente.getSenha().equals(senha)) {
             model.addAttribute("cliente", cliente);
             return "cliente-dashboard";
