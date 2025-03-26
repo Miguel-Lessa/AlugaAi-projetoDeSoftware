@@ -1,18 +1,24 @@
-package com.alugaai.web.service;
-
-import com.alugaai.web.dto.ClienteDto;
-import com.alugaai.web.model.Cliente;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-public interface ClienteService {
-    Cliente salvarCliente(Cliente cliente);
+@Service
+public class ClienteService {
+    private ClienteRepository clienteRepository;
 
-    void atualizarCliente(ClienteDto clienteDto);
+    @Autowired
+    public ClienteService(ClienteRepository clienteRepository) {
+        this.clienteRepository = clienteRepository;
+    }
 
-    void excluirCliente(String idCliente);
+    public Cliente buscarClientePorCpf(String cpf) {
+        return clienteRepository.findByCpf(cpf);
+    }
 
-    Cliente criarNovoPedido();
+    public void atualizarCliente(Cliente cliente) {
+        clienteRepository.save(cliente);
+    }
 
-
-    Cliente buscarPorCpf(String cpf);
+    public void excluirCliente(String cpf) {
+        clienteRepository.deleteByCpf(cpf);
+    }
 }
