@@ -19,6 +19,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/aluga-ai/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/aluga-ai/web/src/main/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
