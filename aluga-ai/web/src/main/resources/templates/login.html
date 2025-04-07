@@ -26,6 +26,15 @@
         <div th:if="${erro}" class="text-danger">
             <p th:text="${erro}"></p>
         </div>
+
+        <div class="mb-3">
+            <label for="tipoUsuario" class="form-label">Tipo de Usuário</label>
+            <select class="form-select" id="tipoUsuario" name="tipoUsuario" required>
+                <option value="cliente">Cliente</option>
+                <option value="admin">Administrador</option>
+                <option value="agente">Agente</option>
+            </select>
+        </div> 
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

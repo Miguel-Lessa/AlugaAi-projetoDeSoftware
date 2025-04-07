@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @GetMapping("/")
     public String redirectToClienteNovo() {
-        return "redirect:/cliente/novo";
+        return "home";
     }
 }

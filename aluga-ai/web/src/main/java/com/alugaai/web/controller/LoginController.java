@@ -15,6 +15,12 @@ import com.alugaai.web.service.GerenteService;
 
 @Controller
 public class LoginController {
+
+    private static final String ADMIN_USER = "admin";
+    private static final String ADMIN_PASS = "123";
+
+    private static final String AGENT_USER = "agente";
+    private static final String AGENT_PASS = "123";
     
     @Autowired
     private ClienteService clienteService;
@@ -31,16 +37,23 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginCliente(@RequestParam("cpf") String cpf,
-                               @RequestParam("senha") String senha,
-                               Model model) {
+    public String login(@RequestParam("cpf") String cpf,
+                    @RequestParam("senha") String senha,
+                    @RequestParam(value = "tipoUsuario", required = false) String tipoUsuario,
+                    Model model) {
+    if ("admin".equals(tipoUsuario) && ADMIN_USER.equals(cpf) && ADMIN_PASS.equals(senha)) {
+        return "redirect:/gerente/dashboard"; 
+    } else if ("agente".equals(tipoUsuario) && AGENT_USER.equals(cpf) && AGENT_PASS.equals(senha)) {
+        return "redirect:/agente/dashboard";
+    } else {
         Cliente cliente = clienteService.buscarPorCpf(cpf);
-        if (cliente != null && cliente.getSenha().equals(senha)) {
+        if ("cliente".equals(tipoUsuario) && cliente != null && cliente.getSenha().equals(senha)) {
             model.addAttribute("cliente", cliente);
-            return "cliente-dashboard";
+            return "cliente-dashboard"; 
         } else {
-            model.addAttribute("erro", "CPF ou senha inválidos.");
-            return "login";
+                model.addAttribute("erro", "CPF, senha ou tipo de usuário inválidos.");
+                return "login"; // Retorna à página de login com mensagem de erro
+            }
         }
     }
 }
