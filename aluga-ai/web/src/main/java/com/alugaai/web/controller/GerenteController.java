@@ -15,12 +15,6 @@ public class GerenteController {
     @Autowired
     private AutomovelService automovelService;
 
-    @GetMapping("/gerente/dashboard")
-    public String dashboard(Model model) {
-        model.addAttribute("mensagem", "Bem-vindo ao painel do gerente!");
-        return "gerente-dashboard";
-    }
-
     @GetMapping("/gerente/cadastroVeiculos")
     public String exibirFormularioCadastro(Model model) {
         model.addAttribute("automovel", new Automovel());
@@ -32,5 +26,12 @@ public class GerenteController {
         automovelService.salvarAutomovel(automovel); // Salva o automóvel no banco de dados
         model.addAttribute("mensagem", "Automóvel cadastrado com sucesso!");
         return "redirect:/gerente/dashboard"; // Redireciona para o dashboard
+    }
+
+    @GetMapping("/gerente/dashboard")
+    public String dashboard(Model model) {
+    model.addAttribute("mensagem", "Bem-vindo ao painel do gerente!");
+    model.addAttribute("carros", automovelService.listarAutomoveis()); // Adiciona a lista de carros ao modelo
+    return "gerente-dashboard";
     }
 }

@@ -23,4 +23,15 @@ public class Automovel {
     private String placa;
     private String posse;
     private boolean alugado;
+
+
+   
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
 }

@@ -9,7 +9,7 @@
 <body>
 <div class="container mt-5">
     <h2>Cadastrar Carro</h2>
-    <form method="post" th:action="@{/gerente/cadastrar-carro}" th:object="${automovel}">
+    <form method="post" th:action="@{/gerente/cadastroVeiculos}" th:object="${automovel}">
         <div class="mb-3">
             <label for="matricula" class="form-label">Matrícula</label>
             <input type="number" class="form-control" id="matricula" name="matricula" th:field="*{matricula}" required>

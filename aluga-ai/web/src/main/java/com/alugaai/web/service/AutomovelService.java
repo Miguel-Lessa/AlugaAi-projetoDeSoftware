@@ -2,6 +2,10 @@ package com.alugaai.web.service;
 
 import com.alugaai.web.model.Automovel;
 import org.springframework.stereotype.Service;
+import com.alugaai.web.model.Automovel;
+import com.alugaai.web.repository.AutomovelRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +14,14 @@ import java.util.List;
 public class AutomovelService {
     private List<Automovel> automoveis = new ArrayList<>();
 
+    @Autowired
+    private AutomovelRepository automovelRepository;
+
     public void salvarAutomovel(Automovel automovel) {
-        automoveis.add(automovel); 
+        automovelRepository.save(automovel);
     }
 
     public List<Automovel> listarAutomoveis() {
-        return automoveis;
+        return automovelRepository.findAll();
     }
 }

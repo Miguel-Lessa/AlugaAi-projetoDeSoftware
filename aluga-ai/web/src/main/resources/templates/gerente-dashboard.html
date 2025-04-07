@@ -3,15 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Gerente</title>
+    <title>Pedidos - Agente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<div class="container mt-5">
-    <h1>Painel do Gerente</h1>
-    <p th:text="${mensagem}"></p>
-    <a href="/gerente/cadastroVeiculos" class="btn btn-primary">Cadastrar Carro</a>
+
+
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold text-center mb-4">Gerente</h2>
+    <div class="mb-4 text-right">
+        <a href="/gerente/cadastroVeiculos" class="btn btn-primary">Cadastrar Veículo</a>
+    </div>
+
+    <!-- Tabela de carros cadastrados -->
+    <h3 class="text-xl font-bold mb-4">Carros Cadastrados</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Matrícula</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th>Placa</th>
+                <th>Posse</th>
+                <th>Alugado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="carro : ${carros}">
+                <td th:text="${carro.matricula}"></td>
+                <td th:text="${carro.marca}"></td>
+                <td th:text="${carro.modelo}"></td>
+                <td th:text="${carro.ano}"></td>
+                <td th:text="${carro.placa}"></td>
+                <td th:text="${carro.posse}"></td>
+                <td th:text="${carro.alugado ? 'Sim' : 'Não'}"></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

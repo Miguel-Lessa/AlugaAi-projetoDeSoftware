@@ -38,6 +38,14 @@
         <button type="button" class="btn btn-primary bg-blue-500 text-white px-4 py-2 rounded-md">
             Editar
         </button>
+        <button type="button" class="btn btn-secondary bg-green-500 text-white px-4 py-2 rounded-md mr-2"
+        th:onclick="|window.location='@{/pedidos/listar}'|">
+    Ver Pedidos
+</button>
+<button type="button" class="btn btn-secondary bg-yellow-500 text-white px-4 py-2 rounded-md"
+        th:onclick="|window.location='@{/pedidos/novo}'|">
+    Criar Pedido
+</button>
     </form>
 </div>
 </body>

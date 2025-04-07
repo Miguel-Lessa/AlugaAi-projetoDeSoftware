@@ -22,8 +22,27 @@ public class Pedidos {
     private Cliente cliente;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "veiculo_id", referencedColumnName = "matricula")
-    private Automovel veiculoAlugado;
+    private Automovel automovel;
     private boolean aprovado;
     private String propriedades;
     private boolean emContratoDeCredito;
+
+    public boolean getStatus() {
+        return aprovado;
+    }
+
+    public boolean setStatus(boolean status) {
+        this.aprovado = status;
+        return this.aprovado;
+    }
+
+     public Automovel getAutomovel() {
+        return automovel;
+    }
+
+    public void setAutomovel(Automovel automovel) {
+        this.automovel = automovel;
+    }
+
+    
 }
